@@ -14,6 +14,7 @@ console.log(myObj);
 myObj['new-Key1'] = 'I am a new key!';
 console.log(myObj);
 
+// directlyAddedKey is the key name
 myObj.directlyAddedKey = "I've been added!";
 console.log(myObj);
 
