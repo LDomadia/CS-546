@@ -37,7 +37,7 @@ async function myDate() {
     try {
         let dateDetails = await date();
         let message = await orderUber(dateDetails);
-        console.log(message);
+        console.log(`Message: ${message}`);
     } catch (e) {
         console.log(e);
     }
