@@ -26,12 +26,14 @@ module.exports = {
   async addDog(name, breeds) {
     if (!name) throw 'You must provide a name for your dog';
 
-    if (!breeds || !Array.isArray(breeds))
-      throw 'You must provide an array of breeds';
+    if (typeof name != 'string') throw 'Name must be a string';
+
+    if (name.trim().length == 0) throw 'Name cannot be empty or just contain spaces';
+
+    if (!breeds || !Array.isArray(breeds)) throw 'You must provide an array of breeds';
 
     if (breeds.length === 0) throw 'You must provide at least one breed.';
 
-    if (typeof name != 'string') throw 'Name must be a string';
     const dogCollection = await dogs();
 
     let newDog = {
